@@ -2,7 +2,7 @@ version: '2.29.7'
 
 services:
   web_app:
-    image: mishrashrimad/django-test-web-app:v1.0
+    image: mishrashrimad/django-test-web-app:v2.0
     
     ports:
       - "8000:8000"  
