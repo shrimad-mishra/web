@@ -1,24 +1,14 @@
-FROM python:3.10-slim AS build
+FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY . /app
 
-RUN apt-get update && \
-    apt-get install -y curl && \
-    pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    apt-get clean
+RUN apt-get update && apt-get install -y curl && apt-get clean
 
-COPY . .
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 RUN python manage.py makemigrations && python manage.py migrate
-
-FROM python:3.10-slim AS runtime
-
-WORKDIR /app
-
-COPY --from=build /app /app
 
 EXPOSE 8000
 
