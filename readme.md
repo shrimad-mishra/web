@@ -7,13 +7,6 @@ Welcome to the **Web Project** repository! This repository contains a collection
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Directory Structure](#directory-structure)
-- [Service Overview](#service-overview)
-- [Testing](#testing)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
