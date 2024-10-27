@@ -1,0 +1,31 @@
+version: '2.29.7'
+
+services:
+  web_app:
+    image: mishrashrimad/django-test-web-app:v1.0
+    
+    ports:
+      - "8000:8000"  
+    
+    networks:
+      - bridge
+    
+    volumes:
+      - app_volume:/app 
+
+    restart: on-failure
+    
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/health | grep 'OK'"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+networks:
+  bridge:
+    driver: bridge 
+
+volumes:
+  app_volume:
+  db_data:

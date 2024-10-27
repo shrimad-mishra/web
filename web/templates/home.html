@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>All Products</h1>
+
+    <!-- Check if there are products to display -->
+    {% if products %}
+        <ul>
+            <!-- Loop through each product and display its details -->
+            {% for product in products %}
+                <li>
+                    <h3>{{ product.product_name }}</h3>
+                    <p>{{ product.product_description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No products available.</p>
+    {% endif %}
+</body>
+</html>
